@@ -1,0 +1,13 @@
+I made a simple bank system. It can handle customers, their accounts, money transfers, currency rates, transactions, audits, and salary payments. The system checks money, limits, and customer status. It also keeps everything safe if many people use it at the same time.
+
+In my first task, I made 'process_transfer'. This procedure moves money from one account to another. It checks if the accounts exist and are active. It checks the customer is not blocked or frozen. It makes sure there is enough money and the daily limit is not exceeded. If the currencies are different, it converts money. Then it updates balances and saves the transfer in 'transaction_log'. It also writes logs in 'audit_log' for both success and errors. The system uses locks to prevent two transfers from changing the same account at the same time.
+
+In the second task, I made views for reports. 'customer_balance_summary' shows all customer accounts, balances in their currency and in KZT, total balance, and limit usage. 'daily_transaction_report' shows transactions by date and type, total and average amounts, and growth. 'suspicious_activity_view' shows risky transactions, like big amounts, many transfers in one hour, or very fast transfers.
+
+In the third task, I made indexes to make the system faster. There are indexes for account numbers, customer IIN, active accounts, email search, JSON logs, and transaction columns. Indexes help the system find data quickly.
+
+In the fourth task, I made 'process_salary_batch' for salary payments. It takes a list of payments, checks the company account, and pays each employee. If one payment fails, others still work. It saves success and errors in JSON logs.
+
+I also checked errors like non-existent accounts, inactive accounts, not enough money, blocked customers, daily limit exceeded, and invalid IIN. All errors are logged. I tested the system for many users at the same time, and it works safely.
+
+Overall, my system can handle accounts, transfers, salaries, reports, and audits. It is safe, fast, and correct.
